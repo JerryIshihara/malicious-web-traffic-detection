@@ -4,7 +4,7 @@ This repository is for the Sphinx machine learning model development, as well as
 
 ## Included:
 - [ ] `service.yml` file that includes the tools, services, commands, etc
-- [ ] `script/bootstrap` for repo set-up
+- [x] `script/bootstrap` for repo set-up
 - [x] Github Actions for continuous integration
 - [x] Test infrastructure
 
