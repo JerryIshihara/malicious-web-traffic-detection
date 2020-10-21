@@ -3,8 +3,8 @@
 This repository is for the Sphinx machine learning model development, as well as the `Flask` backend server deployment.
 
 ## Included:
-- [ ] `service.yml` 
-- [ ] `script/bootstrap`
+- [ ] `service.yml` file that includes the tools, services, commands, etc
+- [ ] `script/bootstrap` for repo set-up
 - [x] Github Actions for continuous integration
 - [x] Test infrastructure
 
