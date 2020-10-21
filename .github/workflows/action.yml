@@ -28,9 +28,9 @@ jobs:
       - uses: "actions/setup-python@v2"
         with:
           python-version: "${{ matrix.python-version }}"
-          
+
       - name: bootstrap
-        run: sudo script/bootstrap
+        run: script/bootstrap
 
       - name: set-up dependency
         run: |
