@@ -31,8 +31,8 @@ jobs:
 
       - name: bootstrap
         run: |
-        chmod 700 script/bootstrap
-        script/bootstrap
+          chmod 700 script/bootstrap
+          script/bootstrap
 
       - name: set-up dependency
         run: |
