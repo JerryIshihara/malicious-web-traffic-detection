@@ -29,11 +29,15 @@ jobs:
         with:
           python-version: "${{ matrix.python-version }}"
 
+      - name: bootstrap
+        run: |
+          chmod 700 script/bootstrap
+          script/bootstrap
+
       - name: set-up dependency
         run: |
           sudo pip3 install setuptools
           sudo pip3 install conan
-          pip3 install -r requirements.txt
 
       # Runs a single command using the runners shell
       - name: test model APIs
