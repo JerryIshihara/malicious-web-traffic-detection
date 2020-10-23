@@ -36,6 +36,7 @@ fi
 
 echo "==========> Installing Project Requirements ..."
 pip install --upgrade pip
+pip install --upgrade virtualenv
 pip install -r requirements.txt
 
 
