@@ -1,4 +1,3 @@
-from model import routes
 from flask import Flask
 from flask_cors import CORS
 import sentry_sdk
@@ -12,3 +11,5 @@ sentry_sdk.init(
 
 app = Flask(__name__)
 CORS(app)
+
+from model import routes
