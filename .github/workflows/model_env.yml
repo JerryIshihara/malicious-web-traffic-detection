@@ -1,0 +1,28 @@
+# Github actions for Flask model environment
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup requirements
+        run: |
+          chmod 700 script/bootstrap
+          script/bootstrap
+      - name: build and test
+        run: |
+          python3 -m pytest -v
