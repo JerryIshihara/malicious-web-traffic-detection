@@ -25,4 +25,4 @@ jobs:
           script/bootstrap
       - name: build and test
         run: |
-          pytest -v
+          python3 -m pytest -v
