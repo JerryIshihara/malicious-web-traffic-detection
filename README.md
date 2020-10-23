@@ -27,7 +27,7 @@ $ script/bootstrap
 
 ## Start the server locally
 
-The server will start locally on `PORT:5000`, change the default port in `.env` file.
+The server will start locally on `PORT:5000`. You may change the default port in `.env` file.
 
 ```
 $ python3 app.py
