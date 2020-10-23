@@ -25,6 +25,5 @@ jobs:
           script/bootstrap
       - name: build and test
         run: |
-          py app.py
+          python3 app.py
           pytest -v
-
