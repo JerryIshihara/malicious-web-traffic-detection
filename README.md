@@ -27,16 +27,18 @@ $ script/bootstrap
 
 ## Start the server locally
 
-The server will start locally on `PORT:5000`
+The server will start locally on `PORT:5000`, change the default port in `.env` file.
 
 ```
 $ python3 app.py
 ```
 
-## Testing
+## Testing & Debug
 
 Run the `Flask` test with the command:
 
 ```
 $ python3 -m pytest -v
 ```
+
+Change the `DEBUG` variable in `.env` file to run in debug mode
