@@ -13,27 +13,29 @@ if [ $VAR = *"Python 3"* ]
 then
     echo "==========> Has the correct Python version."
 else
-    echo "==========> Installing Python 3.7 ..."
-
     if [ "$(uname -s)" = "Darwin" ]
     then
         echo "==========> Mac OS detected ..."
         if [ "$(command -v brew)" == "" ]
         then
+            echo "==========> Installing Homebrew ..."
             /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
         fi
+        echo "==========> Installing Python 3.7 ..."
         brew install python@3.7
 
     elif [ "$(uname -s)" = "Linux" ]
     then
         echo "==========> Linux detected ..."
         sudo apt-get update
+        echo "==========> Installing Python 3.7 ..."
         sudo apt-get install python3.7
     fi
     echo "==========> Python 3.7 Installed."
 fi
 
-echo "==========> Installing Project Requirement ..."
+echo "==========> Installing Project Requirements ..."
+pip install --upgrade pip
 pip install -r requirements.txt
 
 
