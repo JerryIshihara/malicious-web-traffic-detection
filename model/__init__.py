@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_cors import CORS
+import sentry_sdk
 from sentry_sdk.integrations.flask import FlaskIntegration
 
 sentry_sdk.init(
