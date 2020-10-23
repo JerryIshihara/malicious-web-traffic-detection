@@ -30,7 +30,7 @@ $ script/bootstrap
 The server will start locally on `PORT:5000`
 
 ```
-$ python app.py
+$ python3 app.py
 ```
 
 ## Testing
@@ -38,5 +38,5 @@ $ python app.py
 Run the `Flask` test with the command:
 
 ```
-$ pytest -v
+$ python3 -m pytest -v
 ```
