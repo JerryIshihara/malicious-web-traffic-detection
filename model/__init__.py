@@ -1,15 +1,14 @@
+from model import routes
 from flask import Flask
 from flask_cors import CORS
 import sentry_sdk
 from sentry_sdk.integrations.flask import FlaskIntegration
 
 sentry_sdk.init(
-    dsn="https://77efe2bf05f142aaa7383d2764717b05@o465899.ingest.sentry.io/5479436",
+    dsn="https://f7bf6da58d384c7cacf967b90540b879@o358880.ingest.sentry.io/5480579",
     integrations=[FlaskIntegration()],
     traces_sample_rate=1.0
 )
 
 app = Flask(__name__)
 CORS(app)
-
-from model import routes
