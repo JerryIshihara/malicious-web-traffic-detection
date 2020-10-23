@@ -30,6 +30,7 @@ else
         sudo apt-get update
         echo "==========> Installing Python 3.7 ..."
         sudo apt-get install python3.7
+        sudo apt-get install python3-setuptools
     fi
     echo "==========> Python 3.7 Installed."
 fi
