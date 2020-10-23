@@ -35,9 +35,9 @@ else
 fi
 
 echo "==========> Installing Project Requirements ..."
-pip install --upgrade pip
-pip install --upgrade virtualenv
-pip install -r requirements.txt
+pip3 install --upgrade pip
+pip3 install --upgrade virtualenv
+pip3 install -r requirements.txt
 
 
 
