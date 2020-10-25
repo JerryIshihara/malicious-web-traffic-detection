@@ -15,10 +15,14 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v2
-      - name: setup requirements
-        run: |
-          chmod 700 script/bootstrap
-          script/bootstrap
-      - name: build and test
-        run: |
-          python3 -m pytest -v
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+      - name: Install requirements
+        run: pip3 install -r requirements.txt
+      - name: Build and test
+        run: python3 -m pytest -v
+        env:
+          PORT: 5000
+          DEBUG: False
