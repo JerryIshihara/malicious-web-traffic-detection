@@ -11,5 +11,6 @@ docs:
 
 commands:
     bootstrap: chmod 700 script/bootstrap; script/bootstrap
+    database: ''
     server: python3 app.py
     test: python3 -m pytest -v
