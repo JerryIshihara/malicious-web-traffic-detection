@@ -1,5 +1,6 @@
 tools:
     exceptions: https://sentry.io/organizations/dcsil/issues/?project=5450612
+    logging: ''
     ci: https://github.com/dcsil/sphinx-model/blob/main/.github/workflows/model_env.yml
   
 services:
@@ -9,6 +10,6 @@ docs:
     getting_started: ./README.md
 
 commands:
-    bootstrap: script/bootstrap
+    bootstrap: chmod 700 script/bootstrap; script/bootstrap
     server: python3 app.py
     test: python3 -m pytest -v
