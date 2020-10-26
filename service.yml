@@ -1,6 +1,6 @@
 tools:
     exceptions: https://sentry.io/organizations/dcsil/issues/?project=5450612
-    model-ci: https://github.com/dcsil/sphinx-model/blob/main/.github/workflows/model_env.yml
+    ci: https://github.com/dcsil/sphinx-model/blob/main/.github/workflows/model_env.yml
   
 services:
     production: https://dashboard.heroku.com/apps/sphinx-model
