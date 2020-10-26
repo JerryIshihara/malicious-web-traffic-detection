@@ -1,15 +1,14 @@
-
 tools:
     exceptions: https://sentry.io/organizations/dcsil/issues/?project=5450612
     model-ci: https://github.com/dcsil/sphinx-model/blob/main/.github/workflows/model_env.yml
   
-  services:
+services:
     production: https://dashboard.heroku.com/apps/sphinx-model
-  
-  docs:
+
+docs:
     getting_started: ./README.md
-    
-  commands:
+
+commands:
     bootstrap: script/bootstrap
     server: python3 app.py
     test: python3 -m pytest -v
