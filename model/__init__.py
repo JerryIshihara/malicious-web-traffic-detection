@@ -13,3 +13,4 @@ app = Flask(__name__)
 CORS(app)
 
 from model import routes
+from model import utils

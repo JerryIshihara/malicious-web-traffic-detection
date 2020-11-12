@@ -1,4 +1,10 @@
+from catboost import CatBoostClassifier
 
+CWD = 'model/baseline/'
 
-def forward(param):
-    return param
+filename = CWD + 'baseline'
+
+def forward(X):
+    model = CatBoostClassifier()
+    model.load_model(filename, format='cbm')
+    return model.predict(X)
