@@ -6,7 +6,6 @@ def check_data_format(X):
         assert type(X['DestinationIP']) == str
         assert type(X['SourcePort']) == int
         assert type(X['DestinationPort']) == int
-        assert type(X['TimeStamp']) == str
         assert type(X['Duration']) == float
         assert type(X['FlowBytesSent']) == int
         assert type(X['FlowSentRate']) == float
