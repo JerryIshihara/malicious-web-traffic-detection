@@ -38,3 +38,10 @@ def check_data_format(X):
         assert type(X['DoH']) == bool
     except: return False
     return True
+
+def check_data_format4PCA(X):
+    try:
+        assert type(X['logs']) == list
+        assert len(X['logs'][0]) > 3
+    except: return False
+    return True

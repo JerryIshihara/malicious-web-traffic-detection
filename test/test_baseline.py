@@ -55,6 +55,16 @@ wrong_data = {
     "DoH": True
 }
 
+cluster_wrong_format1 = {
+    "logs": np.random.rand(3, 2).tolist()
+}
+cluster_wrong_format2 = {
+    "logs": 'string input'
+}
+cluster_correct_format = {
+    "logs": np.random.rand(3, 10).tolist()
+}
+
 
 @pytest.fixture
 def client():
@@ -92,4 +102,29 @@ def test_forward(client):
     assert response.status_code == 403
     # with no input
     response = client.post(URL)
+    assert response.status_code == 403
+    
+    
+def test_cluster(client):
+    """[summary: test cluster model fit]
+
+    Args:
+        client ([type: class]): [description: Flask test client]
+    """
+    # with correct input format
+    URL = '/cluster'
+    TYPE = 'application/json'
+    response = client.post(URL, 
+                           data=json.dumps(cluster_correct_format),
+                           content_type=TYPE)
+    assert response.status_code == 200
+    # with wrong data type
+    response = client.post(URL, 
+                        data=json.dumps(cluster_wrong_format1),
+                        content_type=TYPE)
+    assert response.status_code == 403
+    # with no input
+    response = client.post(URL, 
+                        data=json.dumps(cluster_wrong_format2),
+                        content_type=TYPE)
     assert response.status_code == 403
