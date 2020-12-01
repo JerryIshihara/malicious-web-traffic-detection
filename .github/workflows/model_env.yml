@@ -27,10 +27,7 @@ jobs:
           PORT: 5000
           DEBUG: False
       - name: upload code climate
-        run: curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-      - run: chmod +x ./cc-test-reporter
-      - run: ./cc-test-reporter before-build
-      - uses: paambaati/codeclimate-action@v2.2.4
+        uses: paambaati/codeclimate-action@v2.2.4
         env:
           CC_TEST_REPORTER_ID: f8f517db7ea425107198c54b5939f8ba5924152b13b95320377664f85580323b
         with:
