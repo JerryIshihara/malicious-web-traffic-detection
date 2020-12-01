@@ -35,6 +35,7 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.7
+      - name: Install requirements
         run: pip3 install -r requirements.txt
       - uses: paambaati/codeclimate-action@v2.2.4
         env:
