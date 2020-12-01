@@ -9,10 +9,9 @@ jobs:
   # This workflow contains a single job called "build"
   pre_build:
     steps:
-      commands:
-        - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-        - chmod +x ./cc-test-reporter
-        - ./cc-test-reporter before-build
+      - run: curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+      - run: chmod +x ./cc-test-reporter
+      - run: ./cc-test-reporter before-build
   build:
     strategy:
       matrix:
@@ -37,6 +36,5 @@ jobs:
         env:
           CC_TEST_REPORTER_ID: f8f517db7ea425107198c54b5939f8ba5924152b13b95320377664f85580323b
   post_build:
-      steps:
-        commands:
-            - ./cc-test-reporter format-coverage --prefix ./
+    steps:
+      - run: ./cc-test-reporter format-coverage --prefix ./
