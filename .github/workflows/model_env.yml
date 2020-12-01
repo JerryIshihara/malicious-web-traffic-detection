@@ -31,4 +31,4 @@ jobs:
         env:
           CC_TEST_REPORTER_ID: f8f517db7ea425107198c54b5939f8ba5924152b13b95320377664f85580323b
         with:
-          coverageCommand: coverage report && coverage json && coverage xml
+          coverageCommand: py.test test/ --cov=./
