@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: upload code climate
         env:
-          CC_TEST_REPORTER_ID: f8f517db7ea425107198c54b5939f8ba5924152b13b95320377664f85580323b
+          CC_TEST_REPORTER_ID: 66879998ad8298583bae9ae44cfd18829a4c449859d762ff8a3133130ce87def
         run: |
           export GIT_BRANCH="${GITHUB_REF##*/}"
           curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
