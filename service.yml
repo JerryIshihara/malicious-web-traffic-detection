@@ -10,7 +10,7 @@ docs:
     getting_started: ./README.md
 
 commands:
-    bootstrap: chmod 700 script/bootstrap; script/bootstrap
+    bootstrap: script/bootstrap
     database: ''
     server: python3 app.py
     test: python3 -m pytest -v
