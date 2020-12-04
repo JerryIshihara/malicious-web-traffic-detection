@@ -9,14 +9,28 @@ jobs:
   coverage:
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
+    # steps:
+    #   - uses: actions/checkout@v2
+    #   - name: upload code climate
+    #     env:
+    #       CC_TEST_REPORTER_ID: 66879998ad8298583bae9ae44cfd18829a4c449859d762ff8a3133130ce87def
+    #     run: |
+    #       export GIT_BRANCH="${GITHUB_REF##*/}"
+    #       curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+    #       chmod +x ./cc-test-reporter
+    #       ./cc-test-reporter format-coverage -t coverage.py
+    #       ./cc-test-reporter upload-coverage --id $CC_TEST_REPORTER_ID
     steps:
-      - uses: actions/checkout@v2
-      - name: upload code climate
-        env:
-          CC_TEST_REPORTER_ID: 66879998ad8298583bae9ae44cfd18829a4c449859d762ff8a3133130ce87def
-        run: |
-          export GIT_BRANCH="${GITHUB_REF##*/}"
-          curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-          chmod +x ./cc-test-reporter
-          ./cc-test-reporter format-coverage -t coverage.py
-          ./cc-test-reporter upload-coverage --id $CC_TEST_REPORTER_ID
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.7
+    - name: Install requirements
+      run: pip3 install -r requirements.txt
+    - uses: paambaati/codeclimate-action@v2.7.4
+      env:
+        # CC_TEST_REPORTER_ID: 1c4ba1b8b8b27e394b1e7e88f6bec9f6ea66276b29f0224e6354579339b28984
+        CC_TEST_REPORTER_ID: f8f517db7ea425107198c54b5939f8ba5924152b13b95320377664f85580323b
+      with:
+        coverageCommand: coverage report && coverage xml && coverage json
