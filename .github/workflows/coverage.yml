@@ -33,4 +33,4 @@ jobs:
         # CC_TEST_REPORTER_ID: 1c4ba1b8b8b27e394b1e7e88f6bec9f6ea66276b29f0224e6354579339b28984
         CC_TEST_REPORTER_ID: f8f517db7ea425107198c54b5939f8ba5924152b13b95320377664f85580323b
       with:
-        coverageCommand: coverage report && coverage xml && coverage json
+        coverageCommand: coverage run -m pytest -v
