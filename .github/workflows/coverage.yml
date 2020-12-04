@@ -1,6 +1,6 @@
 # Github actions for Flask model environment
 
-name: CI
+name: Coverage
 
 on: [push]
 
