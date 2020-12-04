@@ -30,8 +30,10 @@ jobs:
       run: pip3 install -r requirements.txt
     - name: Coverage
       run: | 
-      pytest --cov=./ 
-      coverage report && coverage xml && coverage json
+        pytest --cov=./ 
+        coverage report
+        coverage xml
+        coverage json
     - uses: paambaati/codeclimate-action@v2.7.4
       env:
         # CC_TEST_REPORTER_ID: 1c4ba1b8b8b27e394b1e7e88f6bec9f6ea66276b29f0224e6354579339b28984
