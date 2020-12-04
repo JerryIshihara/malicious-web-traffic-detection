@@ -37,6 +37,7 @@ fi
 
 echo "==========> Installing Project Requirements ..."
 pip3 install --upgrade pip
+pip install --upgrade setuptools
 pip3 install --upgrade virtualenv
 pip3 install -r requirements.txt
 cp .env.template .flaskenv
